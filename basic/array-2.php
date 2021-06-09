@@ -51,5 +51,13 @@
 
     // print_r($iphone);
 
-    $iphone = compact("title","size","color");
-    print_r($iphone);
+    // $iphone = compact("title","size","color");
+    // print_r($iphone);
+
+
+    //shuffle()
+
+
+    shuffle($web);
+
+    print_r($web);

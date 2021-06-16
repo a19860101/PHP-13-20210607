@@ -32,4 +32,44 @@
     // echo $edu;
     // echo implode(",",$skills);
     // echo json_encode($skills);
-    echo $content;
+    // echo $content;
+   
+    if($name == ""){
+        echo "姓名為空";
+        echo "<br>";
+    }else{
+        echo "姓名:{$name}";
+        echo "<br>";
+    }
+
+    
+    
+    echo "Mail:{$mail}";
+    echo "<br>";
+
+    if(!isset($gender)){
+        echo "請選擇性別";
+        echo "<br>";
+    }else{
+        echo "性別:{$gender}";
+        echo "<br>";
+    }
+    
+    if($edu == ""){
+        echo "請選擇教育程度";
+        echo "<br>";
+    }else{
+        echo "教育程度:{$edu}";
+        echo "<br>";
+    }
+    
+    if(!isset($skills)){
+        echo "請選擇專長";
+        echo "<br>";
+    }else{
+        $skills = implode(",",$skills);
+        echo "專長:{$skills}";
+        echo "<br>";
+    }
+    
+    echo "備註:{$content}";

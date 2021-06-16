@@ -21,7 +21,12 @@
     // $name = $_REQUEST["name"];
     // $mail = $_REQUEST["mail"];
 
+    // echo $_REQUEST["name"];
+    // echo $_REQUEST["mail"];
+    // echo $_REQUEST["gender"];
+    // echo $_REQUEST["edu"];
     extract($_REQUEST);
     // echo $name;
     // echo $mail;
-    echo $gender;
+    // echo $gender;
+    echo $edu;

@@ -36,6 +36,18 @@
                 <option value="研究所以上">研究所以上</option>
             </select>
         </div>
+        <div>
+        <label for="skills">專長</label>
+
+        <input type="checkbox" name="skills[]" value="平面設計" id="design">
+        <label for="design">平面設計</label>
+
+        <input type="checkbox" name="skills[]" value="網頁設計" id="web">
+        <label for="web">網頁設計</label>
+
+        <input type="checkbox" name="skills[]" value="影視剪輯" id="video">
+        <label for="video">影視剪輯</label>
+        </div>
         <input type="submit" value="送出">
     </form>
     <hr>

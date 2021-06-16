@@ -29,4 +29,5 @@
     // echo $name;
     // echo $mail;
     // echo $gender;
-    echo $edu;
+    // echo $edu;
+    echo implode(",",$skills);

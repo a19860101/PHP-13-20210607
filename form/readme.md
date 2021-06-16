@@ -17,3 +17,6 @@
 | $x = "php";     | string     | FALSE    | FALSE     | TRUE     | TRUE
 | $x = "true";    | string     | FALSE    | FALSE     | TRUE     | TRUE
 | $x = "false";   | string     | FALSE    | FALSE     | TRUE     | TRUE
+
+參考資料
+[https://www.php.net/manual/en/types.comparisons.php](https://www.php.net/manual/en/types.comparisons.php)

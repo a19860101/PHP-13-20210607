@@ -22,5 +22,6 @@
     // $mail = $_REQUEST["mail"];
 
     extract($_REQUEST);
-    echo $name;
-    echo $mail;
+    // echo $name;
+    // echo $mail;
+    echo $gender;

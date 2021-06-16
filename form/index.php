@@ -17,10 +17,19 @@
             <label for="mail">Mail</label>
             <input type="text" id="mail" name="mail">
         </div>
+        <div>
+            <label for="gender">性別</label>
+            
+            <input type="radio" name="gender" value="男" id="male">
+            <label for="male">男</label>
+            
+            <input type="radio" name="gender" value="女" id="female">
+            <label for="female">女</label>
+        </div>
         <input type="submit" value="送出">
     </form>
     <hr>
-    <h1>GET</h1>
+    <!-- <h1>GET</h1>
     <form action="result.php" method="get">
         <div>
             <label for="name">姓名</label>
@@ -35,6 +44,6 @@
     <p>
         在表單內使用get的唯一狀態就是搜尋
     </p>
-    <a href="result.php?name=hellophp&mail=asdf@yahoo.com.tw">點我點我</a>
+    <a href="result.php?name=hellophp&mail=asdf@yahoo.com.tw">點我點我</a> -->
 </body>
 </html>

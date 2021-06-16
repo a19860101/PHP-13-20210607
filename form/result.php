@@ -30,4 +30,6 @@
     // echo $mail;
     // echo $gender;
     // echo $edu;
-    echo implode(",",$skills);
+    // echo implode(",",$skills);
+    // echo json_encode($skills);
+    echo $content;

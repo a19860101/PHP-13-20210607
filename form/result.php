@@ -41,8 +41,6 @@
         echo "姓名:{$name}";
         echo "<br>";
     }
-
-    
     
     echo "Mail:{$mail}";
     echo "<br>";

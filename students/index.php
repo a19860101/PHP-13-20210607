@@ -7,8 +7,16 @@
     $result = mysqli_query($db,$sql);
     // mysqli_query($db,"SELECT * FROM students");
 
-    $row = mysqli_fetch_assoc($result);
-    print_r($row);
+    /*
+        mysqli_fetch_assoc()
+        mysqli_fetch_row()
+        mysqli_fetch_array()
+    */ 
+    while($row = mysqli_fetch_assoc($result)){
+        // print_r($row);
+        echo $row["name"];
+        echo "<hr>";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

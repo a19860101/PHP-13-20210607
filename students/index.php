@@ -12,9 +12,19 @@
         mysqli_fetch_row()
         mysqli_fetch_array()
     */ 
-    while($row = mysqli_fetch_assoc($result)){
-        // print_r($row);
-        echo $row["name"];
+    // $rows = array();
+    // while($row = mysqli_fetch_assoc($result)){
+    //     // print_r($row);
+    //     // echo $row["name"];
+    //     // echo "<hr>";
+    //     $rows[] = $row;
+    // }
+    // foreach($rows as $stu){
+    //     print_r($stu["name"]);
+    // }
+    $row = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    foreach($row as $student){
+        print_r($student["name"]);
         echo "<hr>";
     }
 ?>

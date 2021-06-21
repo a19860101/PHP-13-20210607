@@ -2,6 +2,13 @@
     // require_once "db.php";
     require_once("db.php");
     // require_once,require,include_once,include
+
+    $sql = "SELECT * FROM students";
+    $result = mysqli_query($db,$sql);
+    // mysqli_query($db,"SELECT * FROM students");
+
+    $row = mysqli_fetch_assoc($result);
+    print_r($row);
 ?>
 <!DOCTYPE html>
 <html lang="en">

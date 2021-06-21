@@ -23,10 +23,7 @@
     //     print_r($stu["name"]);
     // }
     $row = mysqli_fetch_all($result,MYSQLI_ASSOC);
-    foreach($row as $student){
-        print_r($student["name"]);
-        echo "<hr>";
-    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +32,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,td,th {
+            border-collapse: collapse;
+            border: 1px solid #999;
+            padding:10px;
+        }
+    </style>
 </head>
 <body>
     <a href="create.php">新增學員資料</a>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>姓名</th>
+            <th>MAIL</th>
+            <th>性別</th>
+        </tr> 
+        <?php foreach($row as $student){ ?>
+        
+        <tr>
+            <td><?php echo $student["id"]; ?></td>
+            <td><?php echo $student["name"]; ?></td>
+            <td><?php echo $student["mail"]; ?></td>
+            <td><?php echo $student["gender"]; ?></td>
+        </tr>
+
+        <?php } ?>
+        
+        <?php
+            // foreach($row as $student){
+            //     echo "<tr>";
+            //     echo "<td>{$student["id"]}";
+            //     echo "<td>{$student["name"]}";
+            //     echo "<td>{$student["mail"]}";
+            //     echo "</tr>";
+            // }
+        ?>
+    </table>
 </body>
 </html>

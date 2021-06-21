@@ -48,6 +48,7 @@
             <th>姓名</th>
             <th>MAIL</th>
             <th>性別</th>
+            <th>動作</th>
         </tr> 
         <?php foreach($row as $student){ ?>
         
@@ -56,6 +57,9 @@
             <td><?php echo $student["name"]; ?></td>
             <td><?php echo $student["mail"]; ?></td>
             <td><?php echo $student["gender"]; ?></td>
+            <td>
+                <a href="show.php?id=<?php echo $student["id"]; ?>">檢視</a>
+            </td>
         </tr>
 
         <?php } ?>

@@ -27,7 +27,7 @@
         <li>備註: <?php echo $student["content"];?></li>
     </ul>
     <a href="index.php">學員列表</a>
-
+    <a href="edit.php?id=<?php echo $student["id"]; ?>">編輯資料</a>
     <form action="delete.php" method="post">
         <input type="hidden" value="<?php echo $student["id"];?>" name="id">
         <input type="submit" value="刪除" onclick="return confirm('確認刪除？');">

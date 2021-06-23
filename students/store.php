@@ -2,9 +2,8 @@
     require_once("db.php");
     extract($_REQUEST);
 
-    echo $name;
-    echo "<br>";
-    echo $mail;
-    echo "<br>";
-    echo $gender;
+    $skills = implode(",",$skills);
+    $sql = "INSERT INTO students(name,mail,gender,edu,skills,content)
+            VALUES('$name','$mail','$gender','$edu','$skills','$content')";
+    mysqli_query($db,$sql);
     

@@ -8,12 +8,14 @@
     // $sql = "SELECT * FROM students WHERE id = {$id}";
     // $result = mysqli_query($db,$sql);
     // $student = mysqli_fetch_assoc($result);
+    
     // 方法二
     // require_once("db.php");
     // extract($_REQUEST);
     // $sql = "SELECT * FROM students WHERE id = {$id}";
     // $result = $db->query($sql);
     // $student = $result->fetch_assoc();
+    
     // 方法二-預備陳述式 prepare statement
     require_once("db.php");
     extract($_REQUEST);

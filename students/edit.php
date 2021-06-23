@@ -27,21 +27,21 @@
         <div>
             <label for="gender">性別</label>
             
-            <input type="radio" name="gender" value="男" id="male">
+            <input type="radio" name="gender" value="男" id="male" <?php if($student["gender"]=="男"){echo "checked";}?>>
             <label for="male">男</label>
             
-            <input type="radio" name="gender" value="女" id="female">
+            <input type="radio" name="gender" value="女" id="female" <?php echo $student["gender"]=="女"?"checked":""; ?>>
             <label for="female">女</label>
         </div>
         <div>
             <label for="edu">學歷</label>
             <select name="edu" id="edu">
                 <option value="">--請選擇--</option>
-                <option value="國小">國小</option>
-                <option value="國中">國中</option>
-                <option value="高中職">高中職</option>
-                <option value="大專院校">大專院校</option>
-                <option value="研究所以上">研究所以上</option>
+                <option value="國小" <?php echo $student["edu"]=="國小"?"selected":""; ?>>國小</option>
+                <option value="國中" <?php echo $student["edu"]=="國中"?"selected":""; ?>>國中</option>
+                <option value="高中職" <?php echo $student["edu"]=="高中職"?"selected":""; ?>>高中職</option>
+                <option value="大專院校" <?php echo $student["edu"]=="大專院校"?"selected":""; ?>>大專院校</option>
+                <option value="研究所以上" <?php echo $student["edu"]=="研究所以上"?"selected":""; ?>>研究所以上</option>
             </select>
         </div>
         <div>

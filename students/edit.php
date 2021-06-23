@@ -46,14 +46,14 @@
         </div>
         <div>
             <label for="skills">專長</label>
-
-            <input type="checkbox" name="skills[]" value="平面設計" id="design">
+            <?php $skills = explode(",",$student["skills"]); ?>
+            <input type="checkbox" name="skills[]" value="平面設計" id="design" <?php echo in_array("平面設計",$skills)?"checked":"";?>>
             <label for="design">平面設計</label>
 
-            <input type="checkbox" name="skills[]" value="網頁設計" id="web">
+            <input type="checkbox" name="skills[]" value="網頁設計" id="web" <?php echo in_array("網頁設計",$skills)?"checked":"";?>>
             <label for="web">網頁設計</label>
 
-            <input type="checkbox" name="skills[]" value="影視剪輯" id="video">
+            <input type="checkbox" name="skills[]" value="影視剪輯" id="video" <?php echo in_array("影視剪輯",$skills)?"checked":"";?>>
             <label for="video">影視剪輯</label>
         </div>
         <div>

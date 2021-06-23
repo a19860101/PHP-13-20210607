@@ -15,7 +15,7 @@
 </head>
 <body>
     <h1>編輯資料</h1>
-    <form action="store.php" method="post">
+    <form action="update.php" method="post">
         <div>
             <label for="name">姓名</label>
             <input type="text" id="name" name="name" value="<?php echo $student["name"]; ?>">
@@ -60,6 +60,7 @@
             <label for="content">備註</label>
             <textarea name="content" id="content" cols="60" rows="10"><?php echo $student["content"]; ?></textarea>
         </div>
+        <input type="hidden" name="id" value="<?php echo $student["id"];?>">
         <input type="submit" value="送出">
         <input type="button" value="取消" onclick="history.back()">
     </form>

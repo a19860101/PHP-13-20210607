@@ -19,7 +19,7 @@
     //建立mysqli物件實體
     $db = new mysqli($db_host,$db_user,$db_pw,$db_name);
 
-    print_r($db);
+    // print_r($db);
 
     if($db->connect_errno){
         echo $db->connect_error;

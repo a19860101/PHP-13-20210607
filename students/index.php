@@ -1,29 +1,40 @@
 <?php
-    // require_once "db.php";
+    // 方法一
+    
+    // // require_once "db.php";
+    // require_once("db.php");
+    // // require_once,require,include_once,include
+
+    // $sql = "SELECT * FROM students";
+    // $result = mysqli_query($db,$sql);
+    // // mysqli_query($db,"SELECT * FROM students");
+
+    // /*
+    //     mysqli_fetch_assoc()
+    //     mysqli_fetch_row()
+    //     mysqli_fetch_array()
+    // */ 
+    // // $rows = array();
+    // // while($row = mysqli_fetch_assoc($result)){
+    // //     // print_r($row);
+    // //     // echo $row["name"];
+    // //     // echo "<hr>";
+    // //     $rows[] = $row;
+    // // }
+    // // foreach($rows as $stu){
+    // //     print_r($stu["name"]);
+    // // }
+    // $row = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+    // 方法二
     require_once("db.php");
-    // require_once,require,include_once,include
-
     $sql = "SELECT * FROM students";
-    $result = mysqli_query($db,$sql);
-    // mysqli_query($db,"SELECT * FROM students");
-
-    /*
-        mysqli_fetch_assoc()
-        mysqli_fetch_row()
-        mysqli_fetch_array()
-    */ 
-    // $rows = array();
-    // while($row = mysqli_fetch_assoc($result)){
-    //     // print_r($row);
-    //     // echo $row["name"];
-    //     // echo "<hr>";
-    //     $rows[] = $row;
+    $result = $db->query($sql);
+    // $students = array();
+    // while($row = $result->fetch_assoc()){
+    //     $students[] = $row;
     // }
-    // foreach($rows as $stu){
-    //     print_r($stu["name"]);
-    // }
-    $row = mysqli_fetch_all($result,MYSQLI_ASSOC);
-
+    $row = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">

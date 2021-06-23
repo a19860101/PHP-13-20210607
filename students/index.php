@@ -35,6 +35,7 @@
     //     $students[] = $row;
     // }
     $row = $result->fetch_all(MYSQLI_ASSOC);
+    // MYSQLI_ASSOC,MYSQLI_NUM,MYSQLI_BOTH
 ?>
 <!DOCTYPE html>
 <html lang="en">

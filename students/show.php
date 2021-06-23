@@ -1,12 +1,32 @@
 <?php
-    require_once("db.php");
-    // $id = $_GET["id"];
-    // $id = $_REQUEST["id"];
-    extract($_REQUEST);
+    // 方法一
+   // require_once("db.php");
+    // // $id = $_GET["id"];
+    // // $id = $_REQUEST["id"];
+    // extract($_REQUEST);
    
-    $sql = "SELECT * FROM students WHERE id = {$id}";
-    $result = mysqli_query($db,$sql);
-    $student = mysqli_fetch_assoc($result);
+    // $sql = "SELECT * FROM students WHERE id = {$id}";
+    // $result = mysqli_query($db,$sql);
+    // $student = mysqli_fetch_assoc($result);
+    // 方法二
+    // require_once("db.php");
+    // extract($_REQUEST);
+    // $sql = "SELECT * FROM students WHERE id = {$id}";
+    // $result = $db->query($sql);
+    // $student = $result->fetch_assoc();
+    // 方法二-預備陳述式 prepare statement
+    require_once("db.php");
+    extract($_REQUEST);
+    $sql = "SELECT * FROM students WHERE id = ?";
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param("i",$id);
+    $stmt->execute();
+    /* 
+        s: string
+        i: integer
+    */
+    $result = $stmt->get_result();
+    $student = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">

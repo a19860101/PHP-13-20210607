@@ -1,40 +1,8 @@
 <?php
     require_once("pdo.php");
+    require_once("function.php");
 
-    $sql = "SELECT * FROM student";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $row = $stmt->fetchAll();
-    // $res = $pdo->exec($sql);
-    // if($res){
-
-    //    var_dump($res);
-    // }else{
-    //     echo $pdo->errorCode();
-    //     echo "<br>";
-    //     echo $pdo->errorInfo();
-    // }
-
-    // $row = $pdo->query($sql)->fetchAll();
-
-    // $result = $pdo->query($sql);
-    // $row = $result->fetchAll();
-
-    // $stmt = $pdo->prepare($sql);
-    // $stmt->execute();
-    // $row = array();
-    // while($rows = $stmt->fetch(\)){
-    //     $row[] = $rows;
-    // }
-
-    // try {
-    //     $stmt->execute();
-    //     $row = $stmt->fetchAll();
-    // }catch(PDOException $e){
-    //     echo $e->getMessage();
-    // }
-    
-
+    $row = index();
 
 ?>
 <!DOCTYPE html>

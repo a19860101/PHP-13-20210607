@@ -1,41 +1,11 @@
 <?php
-    // 方法一
-    
-    // // require_once "db.php";
-    // require_once("db.php");
-    // // require_once,require,include_once,include
+    require_once("pdo.php");
 
-    // $sql = "SELECT * FROM students";
-    // $result = mysqli_query($db,$sql);
-    // // mysqli_query($db,"SELECT * FROM students");
-
-    // /*
-    //     mysqli_fetch_assoc()
-    //     mysqli_fetch_row()
-    //     mysqli_fetch_array()
-    // */ 
-    // // $rows = array();
-    // // while($row = mysqli_fetch_assoc($result)){
-    // //     // print_r($row);
-    // //     // echo $row["name"];
-    // //     // echo "<hr>";
-    // //     $rows[] = $row;
-    // // }
-    // // foreach($rows as $stu){
-    // //     print_r($stu["name"]);
-    // // }
-    // $row = mysqli_fetch_all($result,MYSQLI_ASSOC);
-
-    // 方法二
-    require_once("db.php");
     $sql = "SELECT * FROM students";
-    $result = $db->query($sql);
-    // $students = array();
-    // while($row = $result->fetch_assoc()){
-    //     $students[] = $row;
-    // }
-    $row = $result->fetch_all(MYSQLI_ASSOC);
-    // MYSQLI_ASSOC,MYSQLI_NUM,MYSQLI_BOTH
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+    $row = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +23,7 @@
     </style>
 </head>
 <body>
-    <a href="create.php">新增學員資料</a>
+<a href="create.php">新增學員資料</a>
     <table>
         <tr>
             <th>#</th>
@@ -75,16 +45,5 @@
         </tr>
 
         <?php } ?>
-        
-        <?php
-            // foreach($row as $student){
-            //     echo "<tr>";
-            //     echo "<td>{$student["id"]}";
-            //     echo "<td>{$student["name"]}";
-            //     echo "<td>{$student["mail"]}";
-            //     echo "</tr>";
-            // }
-        ?>
-    </table>
 </body>
 </html>

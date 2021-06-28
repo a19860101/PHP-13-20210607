@@ -1,9 +1,21 @@
 <?php
+    // 方法一
+    // require_once("db.php");
+    // extract($_REQUEST);
+    // $sql = "SELECT * FROM students WHERE id = {$id}";
+    // $result = mysqli_query($db,$sql);
+    // $student = mysqli_fetch_assoc($result);
+
+    // 方法二
     require_once("db.php");
     extract($_REQUEST);
-    $sql = "SELECT * FROM students WHERE id = {$id}";
-    $result = mysqli_query($db,$sql);
-    $student = mysqli_fetch_assoc($result);
+    $sql = "SELECT * FROM students WHERE id = ?";
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param("i",$id);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    $student = $result->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">

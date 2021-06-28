@@ -1,21 +1,12 @@
 <?php
-    // 方法一
-    // require_once("db.php");
-    // extract($_REQUEST);
-    // $sql = "SELECT * FROM students WHERE id = {$id}";
-    // $result = mysqli_query($db,$sql);
-    // $student = mysqli_fetch_assoc($result);
-
-    // 方法二
-    require_once("db.php");
+    require_once("pdo.php");
     extract($_REQUEST);
     $sql = "SELECT * FROM students WHERE id = ?";
-    $stmt = $db->prepare($sql);
-    $stmt->bind_param("i",$id);
-    $stmt->execute();
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$id]);
 
-    $result = $stmt->get_result();
-    $student = $result->fetch_assoc();
+    $student = $stmt->fetch();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

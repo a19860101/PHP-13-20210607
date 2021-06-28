@@ -8,5 +8,21 @@
     $dsn = "mysql:host={$db_host};dbname={$db_name};charset={$db_charset}";
     // dsn = Data Source Name
 
-    $pdo = new PDO($dsn,$db_user,$db_pw);
-    //建立pdo物件實體
+    
+    // 例外處理
+    try {
+        $pdo = new PDO($dsn,$db_user,$db_pw);
+        //建立pdo物件實體
+        
+        $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_SILENT);
+        // 不主動報錯
+
+        // $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+        // 主動報錯
+        
+        // $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        // 主動報例外
+
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }

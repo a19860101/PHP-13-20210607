@@ -4,8 +4,22 @@
     $sql = "SELECT * FROM students";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-
     $row = $stmt->fetchAll();
+
+    // $row = $pdo->query($sql)->fetchAll();
+    
+    // $result = $pdo->query($sql);
+    // $row = $result->fetchAll();
+
+    // $stmt = $pdo->prepare($sql);
+    // $stmt->execute();
+    // $row = array();
+    // while($rows = $stmt->fetch()){
+    //     $row[] = $rows;
+    // }
+    
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,34 +1,16 @@
 <?php
-    // 方法一
-   // require_once("db.php");
-    // // $id = $_GET["id"];
-    // // $id = $_REQUEST["id"];
-    // extract($_REQUEST);
-   
-    // $sql = "SELECT * FROM students WHERE id = {$id}";
-    // $result = mysqli_query($db,$sql);
-    // $student = mysqli_fetch_assoc($result);
-    
-    // 方法二
-    // require_once("db.php");
-    // extract($_REQUEST);
-    // $sql = "SELECT * FROM students WHERE id = {$id}";
-    // $result = $db->query($sql);
-    // $student = $result->fetch_assoc();
-    
-    // 方法二-預備陳述式 prepare statement
-    require_once("db.php");
+    require_once("pdo.php");
     extract($_REQUEST);
     $sql = "SELECT * FROM students WHERE id = ?";
-    $stmt = $db->prepare($sql);
-    $stmt->bind_param("i",$id);
-    $stmt->execute();
-    /* 
-        s: string
-        i: integer
-    */
-    $result = $stmt->get_result();
-    $student = $result->fetch_assoc();
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$id]);
+    $student = $stmt->fetch();
+
+    // $sql = "SELECT * FROM students WHERE id = :id";
+    // $stmt = $pdo->prepare($sql);
+    // $stmt->bindParam(":id",$id);
+    // $stmt->execute();
+    // $student = $stmt->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">

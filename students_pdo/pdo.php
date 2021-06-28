@@ -14,13 +14,13 @@
         $pdo = new PDO($dsn,$db_user,$db_pw);
         //建立pdo物件實體
         
-        $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_SILENT);
-        // 不主動報錯
+        // $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_SILENT);
+        // 不主動報錯(預設)
 
         // $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
         // 主動報錯
         
-        // $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         // 主動報例外
 
     }catch(PDOException $e){

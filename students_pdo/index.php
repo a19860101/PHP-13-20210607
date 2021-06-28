@@ -1,13 +1,22 @@
 <?php
     require_once("pdo.php");
 
-    $sql = "SELECT * FROM students";
+    $sql = "SELECT * FROM student";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetchAll();
+    // $res = $pdo->exec($sql);
+    // if($res){
+
+    //    var_dump($res);
+    // }else{
+    //     echo $pdo->errorCode();
+    //     echo "<br>";
+    //     echo $pdo->errorInfo();
+    // }
 
     // $row = $pdo->query($sql)->fetchAll();
-    
+
     // $result = $pdo->query($sql);
     // $row = $result->fetchAll();
 
@@ -16,6 +25,13 @@
     // $row = array();
     // while($rows = $stmt->fetch()){
     //     $row[] = $rows;
+    // }
+
+    // try {
+    //     $stmt->execute();
+    //     $row = $stmt->fetchAll();
+    // }catch(PDOException $e){
+    //     echo $e->getMessage();
     // }
     
 

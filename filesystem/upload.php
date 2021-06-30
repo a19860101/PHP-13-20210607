@@ -30,8 +30,13 @@
     // echo $basename;
     // echo "<br>";
     // echo $dirname;
+    if($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif" && $ext != "webp" && $ext != "svg"){
+        echo "<script>alert('請上傳正確的格式');</script>";
+        header("refresh:0;url=index.php"); 
+        return ;
+    }
 
-    $img = time().".".$ext;
+    $img = md5(time()).".".$ext;
    
     if(!is_dir("images")){
         mkdir("images");

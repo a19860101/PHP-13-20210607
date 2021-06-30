@@ -36,8 +36,10 @@
         return ;
     }
 
+    // 定義圖片檔名
     $img = md5(time()).".".$ext;
-   
+    
+    //如果資料夾不存在，就建立資料夾
     if(!is_dir("images")){
         mkdir("images");
     }
@@ -48,6 +50,7 @@
     $sql = "INSERT INTO gallery(name,img)VALUES(?,?)";
     $stmt = $pdo->prepare($sql);
 
+    // 如果使用者有輸入圖片標題，就使用使用者輸入的標題
     if($_POST["name"] != ""){
         $name = $_POST["name"];
     }

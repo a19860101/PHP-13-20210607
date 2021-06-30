@@ -1,5 +1,5 @@
 <?php
-
+    require_once("pdo.php");
     // print_r($_FILES["img"]);
     // echo $_FILES["img"]["name"];
     // echo $_FILES["img"]["type"];
@@ -43,9 +43,15 @@
     }
 
     $target = "images/{$img}";
+
+    //資料庫
+    $sql = "INSERT INTO gallery(name,img)VALUES(?,?)";
+    $stmt = $pdo->prepare($sql);
+
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
+            $stmt->execute([$name,$img]);
             header("refresh:0;url=index.php"); 
         }else{
             echo "上傳失敗";

@@ -9,10 +9,6 @@
 <body>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <div>
-            <label for="">標題</label>
-            <input type="text" name="title">
-        </div>
-        <div>
             <label for="">圖片上傳</label>
             <input type="file" name="img">
         </div>

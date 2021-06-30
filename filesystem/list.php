@@ -1,3 +1,9 @@
+<?php
+    if(isset($_POST["delete"])){
+        // echo $_POST["img"];
+        unlink($_POST["img"]);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +40,6 @@
 <body>
     <div>
         <a href="index.php">上傳圖片</a>
-        
     </div>
     <div class="container">
     <?php
@@ -45,10 +50,11 @@
             <img src="<?php echo $img;?>">
             <form action="" method="post">
                 <input type="hidden" name="img" value="<?php echo $img;?>">
-                <input type="submit" value="刪除">
+                <input type="submit" value="刪除" name="delete" onclick="return confirm('確認刪除？')">
             </form>
         </div>
     <?php } ?>
     </div>
+
 </body>
 </html>

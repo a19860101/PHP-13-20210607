@@ -54,7 +54,15 @@
             </form>
         </div>
     <?php } ?>
+
     </div>
+    <?php
+        if(count($imgs) == 0){
+            echo "目前尚無圖片";
+        }else{
+            echo "目前共有".count($imgs)."張圖片";
+        }
+    ?>
 
 </body>
 </html>

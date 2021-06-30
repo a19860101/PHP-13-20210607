@@ -18,5 +18,7 @@
         </div>
         <input type="submit" value="上傳">
     </form>
+    <hr>
+    <a href="list.php">圖片列表</a>
 </body>
 </html>

@@ -46,6 +46,7 @@
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
+            header("refresh:0;url=index.php"); 
         }else{
             echo "上傳失敗";
         }

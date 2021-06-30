@@ -48,6 +48,11 @@
     $sql = "INSERT INTO gallery(name,img)VALUES(?,?)";
     $stmt = $pdo->prepare($sql);
 
+    if($_POST["name"] != ""){
+        $name = $_POST["name"];
+    }
+
+
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";

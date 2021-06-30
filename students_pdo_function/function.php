@@ -31,7 +31,18 @@
         $row = $stmt->fetch();
         return $row;
     }
-    function update(){}
-    function delete(){
+    function update($request){
+        extract($request);
+        $skills = implode(",",$skills);
+        $sql = "UPDATE students SET name=?,mail=?,gender=?,edu=?,skills=?,content=? WHERE id=?";
+        $stmt = pdo()->prepare($sql);
+        $stmt->execute([$name,$mail,$gender,$edu,$skills,$content,$id]);
 
+    }
+    function delete($request){
+        extract($request);
+        $pdo = pdo();
+        $sql = "DELETE FROM students WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
     }

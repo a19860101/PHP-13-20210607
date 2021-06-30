@@ -18,8 +18,13 @@
     // echo "<br>";
     // echo $tmp_name;
 
+    if(!is_dir("images")){
+        mkdir("images");
+    }
+
+    $target = "images/{$name}";
     if($error == 0){
-        if(move_uploaded_file($tmp_name,$name)){
+        if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
         }else{
             echo "上傳失敗";

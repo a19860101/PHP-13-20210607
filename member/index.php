@@ -14,6 +14,11 @@
         <?php if(isset($_SESSION["AUTH"])){ ?>
             <?php echo $_SESSION["AUTH"]["user"]."你好"; ?>
             <a href="logout.php">登出</a>
+
+            <?php if($_SESSION["AUTH"]["role"] == 0){ ?>
+            <a href="admin.php">後台管理</a>
+            <?php } ?>
+
         <?php }else{ ?>
             <a href="register.php">註冊</a>
             <a href="login.php">登入</a>

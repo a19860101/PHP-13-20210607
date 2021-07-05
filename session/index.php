@@ -23,8 +23,14 @@
         // print_r( $_SESSION["USER"]); 
         // echo $_SESSION["USER"]["password"]    
         // echo $name;
-        echo $password;
+        // echo $password;
     ?>
-
+    <form action="auth.php" method="post">
+        <label for="">帳號</label>
+        <input type="text" name="user">
+        <label for="">密碼</label>
+        <input type="password" name="pw">
+        <input type="submit" value="登入">
+    </form>
 </body>
 </html>

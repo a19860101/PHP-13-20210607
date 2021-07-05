@@ -1,8 +1,14 @@
 <?php
     session_start();
 
-    $_SESSION["USER"] = "John";
+    $_SESSION["USER"] = [
+        "id" => 1,
+        "name" => "John",
+        "password" => "qwerty",
+        "mail" => "john@gmail.com"
+    ];
 
+    extract($_SESSION["USER"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +19,12 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo $_SESSION["USER"]; ?>
+    <?php 
+        // print_r( $_SESSION["USER"]); 
+        // echo $_SESSION["USER"]["password"]    
+        // echo $name;
+        echo $password;
+    ?>
+
 </body>
 </html>

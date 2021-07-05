@@ -10,6 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo $_SESSION["USER"]; ?>
+    <?php print_r($_SESSION["USER"]); ?>
 </body>
 </html>

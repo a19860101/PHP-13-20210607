@@ -15,7 +15,7 @@
         return ;
     }
 
-    if($row["pw"] == $pw){
+    if($row["pw"] == md5(sha1($pw))){
         $_SESSION["AUTH"] = $row;
         echo "<script>alert('歡迎登入');</script>";
         header("refresh:0;url=index.php");

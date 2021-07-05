@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
+    <?php echo md5(sha1("12345"));?>
     <nav>
         <?php if(isset($_SESSION["AUTH"])){ ?>
             <?php echo $_SESSION["AUTH"]["user"]."你好"; ?>

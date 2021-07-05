@@ -16,6 +16,7 @@
 
     $sql = "INSERT INTO users(user,pw)VALUES(?,?)";
     $stmt = $pdo->prepare($sql);
+    $pw = md5(sha1($pw));
     $stmt->execute([$user,$pw]);
 
     echo "<script>alert('註冊成功，請重新登入');</script>";

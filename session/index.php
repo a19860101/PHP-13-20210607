@@ -9,6 +9,8 @@
     ];
 
     extract($_SESSION["USER"]);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +27,9 @@
         // echo $name;
         // echo $password;
     ?>
+    <?php if(isset($_SESSION["AUTH"])){ ?>
+        <a href="logout.php">登出</a>
+    <?php }else{ ?>
     <form action="auth.php" method="post">
         <label for="">帳號</label>
         <input type="text" name="user">
@@ -32,5 +37,6 @@
         <input type="password" name="pw">
         <input type="submit" value="登入">
     </form>
+    <?php } ?>
 </body>
 </html>

@@ -5,8 +5,8 @@
         return $now;
     }
     function index(){
-        $sql = "SELECT * FROM posts";
-        $stmt = pdo()->prepare($sql);;
+        $sql = "SELECT * FROM posts ORDER BY updated_at DESC";
+        $stmt = pdo()->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetchAll();
         return $row;

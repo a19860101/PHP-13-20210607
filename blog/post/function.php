@@ -11,6 +11,15 @@
         $row = $stmt->fetchAll();
         return $row;
     }
+    function show($request){
+        extract($request);
+        $sql = "SELECT * FROM posts WHERE id = ?";
+        $stmt = pdo()->prepare($sql);
+        $stmt->execute([$id]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        // PDO::FETCH_ASSOC,PDO::FETCH_BOTH,PDO::FETCH_NUM
+        return $row;
+    }
     function store($request){
         extract($request);
 	    // $sql = "INSERT INTO posts(title,content,category_id,user_id,created_at,updated_at)VALUES(?,?,?,?,NOW(),NOW())";

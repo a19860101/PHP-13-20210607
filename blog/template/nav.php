@@ -10,7 +10,7 @@
                     <a class="nav-link" href="#">文章列表</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">新增文章</a>
+                    <a class="nav-link" href="post/create.php">新增文章</a>
                 </li>
             </ul>
         </div>

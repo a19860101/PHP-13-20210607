@@ -7,7 +7,7 @@
             <hr>
         </div>
         <div class="col-8">
-            <form action="">
+            <form action="store.php" method="post">
                 <div class="mb-3">
                     <label for="title" class="form-label">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control">
@@ -15,9 +15,9 @@
                 <div class="mb-3">
                     <label for="category_id" class="form-label">分類</label>
                     <select name="category_id" id="category_id" class="form-select">
-                        <option value="科技">科技</option>
-                        <option value="生活">生活</option>
-                        <option value="美食">美食</option>
+                        <option value="1">科技</option>
+                        <option value="2">生活</option>
+                        <option value="3">美食</option>
                     </select>
                 </div>
                 <div class="mb-3">

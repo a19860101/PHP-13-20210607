@@ -13,9 +13,12 @@
         </div>
         <?php foreach($posts as $post){ ?>
         <div class="col-8 border p-4 my-3 rounded">
-            <h3><?php echo $post["title"]; ?></h3>
-            <div>
+            <h3 class="mb-3"><?php echo $post["title"]; ?></h3>
+            <div class="mb-3">
                 <?php echo $post["content"]; ?>
+            </div>
+            <div class="mb-3">
+                <a href="post/show.php?id=<?php echo $post["id"];?>" class="btn btn-primary">繼續閱讀</a>
             </div>
             <div>
                 最後更新時間 <?php echo $post["updated_at"]; ?>

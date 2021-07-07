@@ -15,7 +15,10 @@
         <div class="col-8 border p-4 my-3 rounded">
             <h3 class="mb-3"><?php echo $post["title"]; ?></h3>
             <div class="mb-3">
-                <?php echo mb_substr($post["content"],0,100); ?>...
+                <?php
+                    $content = strip_tags($post["content"]);
+                    echo mb_substr($content,0,100); 
+                ?>...
             </div>
             <div class="mb-3">
                 <a href="post/show.php?id=<?php echo $post["id"];?>" class="btn btn-primary">繼續閱讀</a>

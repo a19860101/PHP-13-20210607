@@ -1,3 +1,3 @@
-<?php require_once("template/header.php"); ?>
-<?php require_once("template/nav.php"); ?>
-<?php require_once("template/footer.php"); ?>
+<?php include("template/header.php"); ?>
+<?php include("template/nav.php"); ?>
+<?php include("template/footer.php"); ?>

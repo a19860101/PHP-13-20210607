@@ -4,6 +4,13 @@
         $now = date("Y-m-d H:i:s");
         return $now;
     }
+    function index(){
+        $sql = "SELECT * FROM posts";
+        $stmt = pdo()->prepare($sql);;
+        $stmt->execute();
+        $row = $stmt->fetchAll();
+        return $row;
+    }
     function store($request){
         extract($request);
 	    // $sql = "INSERT INTO posts(title,content,category_id,user_id,created_at,updated_at)VALUES(?,?,?,?,NOW(),NOW())";

@@ -28,3 +28,10 @@
         $user_id = 1;
 	    $stmt->execute([$title,$content,$category_id,$user_id,now(),now()]);
     }
+
+    function delete($request){
+        extract($request);
+        $sql = "DELETE FROM posts WHERE id = ?";
+        $stmt = pdo()->prepare($sql);
+        $stmt->execute([$id]);
+    }

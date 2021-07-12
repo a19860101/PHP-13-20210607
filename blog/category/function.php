@@ -4,13 +4,13 @@ function now(){
     $now = date("Y-m-d H:i:s");
     return $now;
 }
-// function index(){
-//     $sql = "SELECT * FROM posts ORDER BY created_at DESC";
-//     $stmt = pdo()->prepare($sql);
-//     $stmt->execute();
-//     $row = $stmt->fetchAll();
-//     return $row;
-// }
+function index(){
+    $sql = "SELECT * FROM categories ORDER BY created_at DESC";
+    $stmt = pdo()->prepare($sql);
+    $stmt->execute();
+    $row = $stmt->fetchAll();
+    return $row;
+}
 function store($request){
     extract($request);
     $sql = "INSERT INTO categories(title,slug,created_at)VALUES(?,?,?)";

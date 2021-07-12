@@ -18,9 +18,9 @@ function store($request){
     $stmt->execute([$title, $slug, now()]);
 }
 
-// function delete($request){
-//     extract($request);
-//     $sql = "DELETE FROM posts WHERE id = ?";
-//     $stmt = pdo()->prepare($sql);
-//     $stmt->execute([$id]);
-// }
+function delete($request){
+    extract($request);
+    $sql = "DELETE FROM categories WHERE id = ?";
+    $stmt = pdo()->prepare($sql);
+    $stmt->execute([$id]);
+}

@@ -1,3 +1,8 @@
+<?php
+    include("../pdo.php");
+    include("../category/function.php");
+    $categories = index();
+?>
 <?php include("../template/header.php"); ?>
 <?php include("../template/nav.php"); ?>
 <div class="container">
@@ -15,9 +20,9 @@
                 <div class="mb-3">
                     <label for="category_id" class="form-label">分類</label>
                     <select name="category_id" id="category_id" class="form-select">
-                        <option value="1">科技</option>
-                        <option value="2">生活</option>
-                        <option value="3">美食</option>
+                        <?php foreach($categories as $category){ ?>
+                        <option value="<?php echo $category["id"];?>"><?php echo $category["title"]; ?></option>
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="mb-3">

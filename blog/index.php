@@ -14,6 +14,9 @@
         <?php foreach($posts as $post){ ?>
         <div class="col-8 border p-4 my-3 rounded">
             <h3 class="mb-3"><?php echo $post["title"]; ?></h3>
+            <div>
+                分類: <?php echo $post["c_title"];?>
+            </div>
             <div class="mb-3">
                 <?php
                     $content = strip_tags($post["content"]);

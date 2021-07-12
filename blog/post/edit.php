@@ -12,7 +12,7 @@
             <hr>
         </div>
         <div class="col-8">
-            <form action="store.php" method="post">
+            <form action="update.php" method="post">
                 <div class="mb-3">
                     <label for="title" class="form-label">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control" value="<?php echo $post["title"];?>">
@@ -29,6 +29,7 @@
                     <label for="content" class="form-label">文章內容</label>
                     <textarea name="content" id="content" rows="10" class="form-control"><?php echo $post["content"]; ?></textarea>
                 </div>
+                <input type="hidden" name="id" value="<?php echo $post["id"];?>">
                 <input type="submit" value="儲存文章" class="btn btn-primary">
             </form>
         </div>

@@ -1,9 +1,5 @@
 <?php
-    function now(){
-        date_default_timezone_set("Asia/Taipei");
-        $now = date("Y-m-d H:i:s");
-        return $now;
-    }
+
     function index(){
         $sql = "SELECT posts.*,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id ORDER BY created_at DESC";
         $stmt = pdo()->prepare($sql);

@@ -32,13 +32,13 @@
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
-    function store($request){
+    function store($request,$img){
         extract($request);
 	    // $sql = "INSERT INTO posts(title,content,category_id,user_id,created_at,updated_at)VALUES(?,?,?,?,NOW(),NOW())";
-	    $sql = "INSERT INTO posts(title,content,category_id,user_id,created_at,updated_at)VALUES(?,?,?,?,?,?)";
+	    $sql = "INSERT INTO posts(title,cover,content,category_id,user_id,created_at,updated_at)VALUES(?,?,?,?,?,?,?)";
 	    $stmt = pdo()->prepare($sql);
         $user_id = 1;
-	    $stmt->execute([$title,$content,$category_id,$user_id,now(),now()]);
+	    $stmt->execute([$title,$img,$content,$category_id,$user_id,now(),now()]);
     }
 
     function delete($request){
@@ -76,7 +76,8 @@
         if($error == 0){
             if(move_uploaded_file($tmp_name,$target)){
                 echo "上傳成功";
-                header("refresh:0;url=../index.php"); 
+                // header("refresh:0;url=../index.php"); 
+                return $img;
             }else{
                 echo "上傳失敗";
             }

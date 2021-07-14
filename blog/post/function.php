@@ -54,3 +54,33 @@
         $stmt = pdo()->prepare($sql);
         $stmt->execute([$title, $content, $category_id, now(), $id]);
     }
+    function uploadCover($files){
+        extract($files);
+        $ext = pathinfo($name,PATHINFO_EXTENSION);
+        if($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif" && $ext != "webp" && $ext != "svg"){
+            echo "<script>alert('請上傳正確的格式');</script>";
+            header("refresh:0;url=../index.php"); 
+            return ;
+        }
+    
+        // 定義圖片檔名
+        $img = md5(time()).".".$ext;
+        
+        //如果資料夾不存在，就建立資料夾
+        if(!is_dir("images")){
+            mkdir("images");
+        }
+    
+        $target = "images/{$img}";
+    
+        if($error == 0){
+            if(move_uploaded_file($tmp_name,$target)){
+                echo "上傳成功";
+                header("refresh:0;url=../index.php"); 
+            }else{
+                echo "上傳失敗";
+            }
+        }else{
+            echo "上傳錯誤";
+        }
+    }

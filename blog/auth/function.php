@@ -17,6 +17,6 @@
         $pw = md5(sha1($pw));
         $stmt->execute([$user,$pw]);
     
-       
-    
+        echo "<script>alert('註冊成功，請重新登入');</script>";
+        header("refresh:0;url=register.php");
     }

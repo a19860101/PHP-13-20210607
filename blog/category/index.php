@@ -1,7 +1,7 @@
 <?php 
     include("../pdo.php");
     include("function.php");
-    $categories = index();
+    $categories = categoryIndex();
 ?>
 <?php include("../template/header.php"); ?>
 <?php include("../template/nav.php"); ?>

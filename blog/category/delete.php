@@ -2,6 +2,6 @@
     include("../pdo.php");
     include("function.php");
 
-    delete($_REQUEST);
+    categoryDelete($_REQUEST);
 
     header("location:index.php");

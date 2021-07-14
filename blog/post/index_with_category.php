@@ -1,14 +1,14 @@
 <?php
-    include("pdo.php");
-    include("post/function.php");
-    $posts = index();
+    include("../pdo.php");
+    include("function.php");
+    $posts = indexWithCategory($_REQUEST);
 ?>
-<?php include("template/header.php"); ?>
-<?php include("template/nav.php"); ?>
+<?php include("../template/header.php"); ?>
+<?php include("../template/nav.php"); ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-            <h2>文章列表</h2>
+            <h2>"<?php echo $posts[0]["c_title"]; ?>" 文章列表</h2>
             <hr>
         </div>
         <?php foreach($posts as $post){ ?>
@@ -39,4 +39,4 @@
         <?php } ?>
     </div>
 </div>
-<?php include("template/footer.php"); ?>
+<?php include("../template/footer.php"); ?>

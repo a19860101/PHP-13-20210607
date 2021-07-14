@@ -9,7 +9,7 @@
     }
     function indexWithCategory($request){
         extract($request);
-        $sql = "SELECT * FROM posts WHERE category_id = ?";
+        $sql = "SELECT posts.*,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id WHERE category_id = ? ORDER BY created_at DESC";
         $stmt = pdo()->prepare($sql);
         $stmt->execute([$id]);
         $row = $stmt->fetchAll();

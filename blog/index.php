@@ -16,7 +16,7 @@
             <h3 class="mb-3"><?php echo $post["title"]; ?></h3>
             <div>
                 分類:
-                <a href="#">
+                <a href="post/index_with_category.php?id=<?php echo $post["category_id"];?>">
                     <?php echo $post["c_title"];?>
                 </a> 
             </div>

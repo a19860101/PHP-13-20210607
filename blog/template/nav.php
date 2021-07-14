@@ -19,6 +19,17 @@
                     <a class="nav-link" href="<?php echo $webroot; ?>/category/index.php">分類管理</a>
                 </li>
             </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $webroot; ?>/auth/register.php">註冊會員</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $webroot; ?>/auth/login.php">登入</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $webroot; ?>/auth/logout.php">登出</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

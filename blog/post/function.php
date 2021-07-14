@@ -56,6 +56,10 @@
     }
     function uploadCover($files){
         extract($files);
+        if($name == ""){
+            $img = null;
+            return $img;
+        }        
         $ext = pathinfo($name,PATHINFO_EXTENSION);
         if($ext != "jpg" && $ext != "jpeg" && $ext != "png" && $ext != "gif" && $ext != "webp" && $ext != "svg"){
             echo "<script>alert('請上傳正確的格式');</script>";

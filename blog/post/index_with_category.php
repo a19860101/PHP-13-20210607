@@ -27,7 +27,7 @@
                 ?>...
             </div>
             <div class="mb-3">
-                <a href="post/show.php?id=<?php echo $post["id"];?>" class="btn btn-primary">繼續閱讀</a>
+                <a href="show.php?id=<?php echo $post["id"];?>" class="btn btn-primary">繼續閱讀</a>
             </div>
             <div>
                 文章建立時間 <?php echo $post["created_at"]; ?>

@@ -18,6 +18,10 @@
                     <input type="text" name="title" id="title" class="form-control">
                 </div>
                 <div class="mb-3">
+                    <label for="cover" class="form-label">封面圖片</label>
+                    <input type="file" name="cover" id="cover">
+                </div>
+                <div class="mb-3">
                     <label for="category_id" class="form-label">分類</label>
                     <select name="category_id" id="category_id" class="form-select">
                         <?php foreach($categories as $category){ ?>

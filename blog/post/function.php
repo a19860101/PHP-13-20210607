@@ -7,6 +7,14 @@
         $row = $stmt->fetchAll();
         return $row;
     }
+    function indexWithCategory($request){
+        extract($request);
+        $sql = "SELECT * FROM posts WHERE category_id = ?";
+        $stmt = pdo()->prepare($sql);
+        $stmt->execute([$id]);
+        $row = $stmt->fetchAll();
+        return $row;
+    }
     function show($request){
         extract($request);
         $sql = "SELECT * FROM posts WHERE id = ?";

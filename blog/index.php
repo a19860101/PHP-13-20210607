@@ -5,6 +5,18 @@
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
+<style>
+    .cover {
+        width: 100%;
+        height: 300px;
+    }
+    .cover img {
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        object-position: center;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
@@ -14,6 +26,13 @@
         <?php foreach($posts as $post){ ?>
         <div class="col-8 border p-4 my-3 rounded">
             <h3 class="mb-3"><?php echo $post["title"]; ?></h3>
+            <div class="cover">
+                <?php if($post["cover"] != null){ ?>
+                <img src="post/images/<?php echo $post["cover"];?>" alt="">
+                <?php }else{ ?>
+                <img src="post/images/question-marks.jpg" alt="">
+                <?php } ?>
+            </div>
             <div>
                 分類:
                 <a href="post/index_with_category.php?id=<?php echo $post["category_id"];?>">

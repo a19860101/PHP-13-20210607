@@ -1,7 +1,10 @@
 <?php
 
     function index(){
-        $sql = "SELECT posts.*,categories.title AS c_title FROM posts LEFT JOIN categories ON posts.category_id = categories.id ORDER BY created_at DESC";
+        $sql = "SELECT posts.*,users.user,categories.title AS c_title FROM posts 
+                LEFT JOIN categories ON posts.category_id = categories.id 
+                LEFT JOIN users ON posts.user_id = users.id 
+                ORDER BY created_at DESC";
         $stmt = pdo()->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetchAll();

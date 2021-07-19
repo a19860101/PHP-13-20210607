@@ -40,6 +40,9 @@
                     <?php echo $post["c_title"];?>
                 </a> 
             </div>
+            <div class="my-1">
+                作者:<b><i><?php echo $post["user"];?></i></b>
+            </div>
             <div class="mb-3">
                 <?php
                     $content = strip_tags($post["content"]);

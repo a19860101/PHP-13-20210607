@@ -35,6 +35,9 @@
 
                 <?php if(isset($_SESSION["AUTH"])){ ?>
                 <li class="nav-item">
+                    <a class="nav-link" href="#"><?php echo $_SESSION["AUTH"]["user"];?></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo $webroot; ?>/auth/logout.php">登出</a>
                 </li>
                 <?php } ?>

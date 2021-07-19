@@ -37,7 +37,7 @@
 	    // $sql = "INSERT INTO posts(title,content,category_id,user_id,created_at,updated_at)VALUES(?,?,?,?,NOW(),NOW())";
 	    $sql = "INSERT INTO posts(title,cover,content,category_id,user_id,created_at,updated_at)VALUES(?,?,?,?,?,?,?)";
 	    $stmt = pdo()->prepare($sql);
-        $user_id = 1;
+        $user_id = $_SESSION["AUTH"]["id"];
 	    $stmt->execute([$title,$img,$content,$category_id,$user_id,now(),now()]);
     }
 

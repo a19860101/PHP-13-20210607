@@ -21,7 +21,6 @@
         header("refresh:0;url=register.php");
     }
     function auth($request){
-        session_start();
         extract($request);
         $sql = "SELECT * FROM users WHERE user = ?";
         $stmt = pdo()->prepare($sql);

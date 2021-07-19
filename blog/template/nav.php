@@ -20,15 +20,20 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
+                <?php if(!isset($_SESSION["AUTH"])){ ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $webroot; ?>/auth/register.php">註冊會員</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $webroot; ?>/auth/login.php">登入</a>
                 </li>
+                <?php } ?>
+
+                <?php if(isset($_SESSION["AUTH"])){ ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $webroot; ?>/auth/logout.php">登出</a>
                 </li>
+                <?php } ?>
             </ul>
         </div>
     </div>

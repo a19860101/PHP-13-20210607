@@ -1,4 +1,5 @@
 <?php
+    session_start();
     function pdo(){
         $db_host = "localhost";
         $db_user = "admin";

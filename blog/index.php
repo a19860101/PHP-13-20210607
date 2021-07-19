@@ -2,6 +2,7 @@
     include("pdo.php");
     include("post/function.php");
     $posts = index();
+    // print_r($_SESSION["AUTH"]);
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>

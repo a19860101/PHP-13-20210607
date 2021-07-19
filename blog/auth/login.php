@@ -1,3 +1,5 @@
+<?php include("../pdo.php");?>
+
 <?php include("../template/header.php"); ?>
 <?php include("../template/nav.php"); ?>
 <div class="container">

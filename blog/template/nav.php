@@ -1,5 +1,9 @@
 <?php
     $webroot = "http://localhost/php-13-20210607/blog";
+    $sql = "SELECT * FROM categories ORDER BY created_at DESC";
+    $stmt = pdo()->prepare($sql);
+    $stmt->execute();
+    $row = $stmt->fetchAll();
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">
@@ -12,6 +16,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $webroot; ?>">文章列表</a>
                 </li>
+                
+                <?php foreach($row as $c){ ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $webroot; ?>/post/index_with_category.php?id=<?php echo $c["id"];?>"><?php echo $c["title"];?></a>
+                </li>
+                <?php } ?>
+
                 <?php if(isset($_SESSION["AUTH"])){ ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $webroot; ?>/post/create.php">新增文章</a>
@@ -22,6 +33,7 @@
                     </li>
                     <?php } ?>
                 <?php } ?>
+
             </ul>
             <ul class="navbar-nav ms-auto">
                 <?php if(!isset($_SESSION["AUTH"])){ ?>

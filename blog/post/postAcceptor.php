@@ -2,22 +2,22 @@
 /***************************************************
  * Only these origins are allowed to upload images *
  ***************************************************/
-$accepted_origins = array("http://localhost", "http://192.168.1.1", "http://example.com");
+// $accepted_origins = array("http://localhost", "http://192.168.1.1", "http://example.com","https://localhost");
 
 /*********************************************
  * Change this line to set the upload folder *
  *********************************************/
 $imageFolder = "images/";
 
-if (isset($_SERVER['HTTP_ORIGIN'])) {
-    // same-origin requests won't set an origin. If the origin is set, it must be valid.
-    if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
-    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-    } else {
-    header("HTTP/1.1 403 Origin Denied");
-    return;
-    }
-}
+// if (isset($_SERVER['HTTP_ORIGIN'])) {
+//     // same-origin requests won't set an origin. If the origin is set, it must be valid.
+//     if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
+//     header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+//     } else {
+//     header("HTTP/1.1 403 Origin Denied");
+//     return;
+//     }
+// }
 
 // Don't attempt to process the upload on an OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {

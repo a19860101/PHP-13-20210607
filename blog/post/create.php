@@ -41,7 +41,12 @@
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
-        selector: '#content'
+        selector: '#content',
+        language: 'zh_TW',
+        height: '400px',
+        toolbar: 'removeformat | image code link | styleselect bullist numlist | bold italic forecolor underline strikethrough |'+
+        '|alignleft aligncenter alignright ',
+        plugins: 'image code link lists'
     });
 </script>
 <?php include("../template/footer.php"); ?>

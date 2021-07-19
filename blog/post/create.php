@@ -46,16 +46,11 @@
         height: '400px',
         toolbar: 'removeformat | image code link | styleselect bullist numlist | bold italic forecolor underline strikethrough |'+
         '|alignleft aligncenter alignright ',
-        plugins: 'image code link lists',
+        plugins: 'image code link lists imagetools ',
         // menubar: 'file edit view insert format tools'
         image_title: true,
-        /* enable automatic uploads of images represented by blob or data URIs*/
         automatic_uploads: true,
-        /*
-            URL of our upload handler (for more details check: https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_url)
-            images_upload_url: 'postAcceptor.php',
-            here we add custom filepicker only to Image dialog
-        */
+        images_upload_url:'postAcceptor.php',
         file_picker_types: 'image',
         /* and here's our custom image picker*/
         file_picker_callback: function (cb, value, meta) {

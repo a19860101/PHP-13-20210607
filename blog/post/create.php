@@ -5,6 +5,20 @@
 ?>
 <?php include("../template/header.php"); ?>
 <?php include("../template/nav.php"); ?>
+<style>
+    .gallery {
+        display: none;
+    }
+    .gallery-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0,0,0,.8);
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
@@ -42,6 +56,12 @@
         </div>
     </div>
 </div>
+
+<div class="gallery">
+    <div class="gallery-overlay"></div>
+    <div class="gallery-container"></div>
+</div>
+
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
@@ -101,6 +121,7 @@
     $(function(){
         $('.selectCover').click(function(){
             console.log('success');
+            $('.gallery').show();
         });
     })
 </script>

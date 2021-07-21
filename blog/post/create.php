@@ -17,9 +17,13 @@
                     <label for="title" class="form-label">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control">
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="cover" class="form-label">封面圖片</label>
                     <input type="file" name="cover" id="cover">
+                </div> -->
+                <div class="mb-3">
+                    <input type="hidden" name="cover" value="">
+                    <a href="#" class="selectCover">選擇圖片</a>
                 </div>
                 <div class="mb-3">
                     <label for="category_id" class="form-label">分類</label>
@@ -91,5 +95,13 @@
             input.click();
         },
     });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+<script>
+    $(function(){
+        $('.selectCover').click(function(){
+            console.log('success');
+        });
+    })
 </script>
 <?php include("../template/footer.php"); ?>

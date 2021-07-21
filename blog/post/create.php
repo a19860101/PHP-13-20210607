@@ -34,6 +34,23 @@
         right: 30px;
         top: 30px;
     }
+    .gallery-items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .gallery-items label {
+        flex:0 0 200px;
+        height: 150px;
+        padding: 10px;
+
+    }
+    .gallery-items label img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 </style>
 <div class="container">
     <div class="row justify-content-center">
@@ -78,6 +95,18 @@
     <div class="gallery-container">
         <i class="fas fa-times fa-3x close"></i>
         <!-- <a href="#" class="close">close</a> -->
+        <div class="gallery-items">
+            <?php 
+                $galleries = glob("images/*.{jpeg,jpg,png,gif,webp}",GLOB_BRACE);
+                foreach($galleries as $gallery){
+            ?>
+            <label for="<?php echo $gallery;?>">
+                <img src="<?php echo $gallery;?>" width="150">
+                <input type="radio" name="cover" class="cover" value="<?php echo $gallery;?>" id="<?php echo $gallery;?>">
+            </label>
+            <?php } ?>
+        </div>
+
     </div>
 </div>
 

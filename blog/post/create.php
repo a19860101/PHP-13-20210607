@@ -5,6 +5,7 @@
 ?>
 <?php include("../template/header.php"); ?>
 <?php include("../template/nav.php"); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
 <style>
     .gallery {
         display: none;
@@ -27,6 +28,11 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 8889;
+    }
+    .close {
+        position: absolute;
+        right: 30px;
+        top: 30px;
     }
 </style>
 <div class="container">
@@ -69,7 +75,10 @@
 
 <div class="gallery">
     <div class="gallery-overlay"></div>
-    <div class="gallery-container"></div>
+    <div class="gallery-container">
+        <i class="fas fa-times fa-3x close"></i>
+        <!-- <a href="#" class="close">close</a> -->
+    </div>
 </div>
 
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -133,6 +142,9 @@
             console.log('success');
             $('.gallery').show();
         });
+        $('.close').click(function(){
+            $('.gallery').hide();
+        })
     })
 </script>
 <?php include("../template/footer.php"); ?>

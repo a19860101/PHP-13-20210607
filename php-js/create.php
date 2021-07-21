@@ -62,7 +62,20 @@
         $(function(){
             $('form').submit(function(e){
                 e.preventDefault();
-                console.log('success');
+                $.ajax({
+                    url:'store.php',
+                    data:$('form').serialize(),
+                    success:function(){
+                        console.log('success');
+                        alert('資料已新增');
+                        location.href = 'index.php';
+                        
+                    },
+                    error:function(){
+                        console.log('error');
+                    }
+                })
+                // console.log($('form').serialize());
             });
         })
     </script>

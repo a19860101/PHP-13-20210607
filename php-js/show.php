@@ -24,14 +24,15 @@
     </ul>
     <a href="index.php">學員列表</a>
     <a href="edit.php?id=<?php echo $student["id"]; ?>">編輯資料</a>
-    <form action="#" method="post">
+    <form action="#" method="post" id="delForm">
         <input type="hidden" value="<?php echo $student["id"];?>" name="id">
         <input type="submit" value="刪除" onclick="return confirm('確認刪除？');" class="del">
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script>
         $(function(){
-            $('.del').click(function(e){
+
+            $('form').submit(function(e){
                 e.preventDefault();
                 $.ajax({
                     url: 'delete.php',
@@ -40,7 +41,7 @@
                         console.log('success');
                         alert('資料已刪除');
 
-                        location.href = 'index.php'
+                        location.href = 'index.php';
                     },
                     error:function(){}
                 })

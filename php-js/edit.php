@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>編輯資料</h1>
-    <form action="update.php" method="post">
+    <form action="#" method="post">
         <div>
             <label for="name">姓名</label>
             <input type="text" id="name" name="name" value="<?php echo $student["name"]; ?>">
@@ -59,10 +59,30 @@
             <label for="content">備註</label>
             <textarea name="content" id="content" cols="60" rows="10"><?php echo $student["content"]; ?></textarea>
         </div>
-        <input type="hidden" name="id" value="<?php echo $student["id"];?>">
+        <input type="hidden" name="id" value="<?php echo $student["id"];?>" class="sid">
         <input type="submit" value="送出">
         <input type="button" value="取消" onclick="history.back()">
     </form>
     <hr>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function(){
+            $('form').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url:'update.php',
+                    data:$('form').serialize(),
+                    success:function(){
+                        let sid = $('.sid').val();
+                        alert('檔案修改完成');
+                        location.href = 'show.php?id='+sid;
+                    },
+                    error:function(){
+
+                    }
+                })
+            })
+        })
+    </script>
 </body>
 </html>

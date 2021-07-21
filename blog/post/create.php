@@ -28,6 +28,7 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 8889;
+        padding: 30px;
     }
     .close {
         position: absolute;
@@ -106,7 +107,7 @@
             </label>
             <?php } ?>
         </div>
-
+        <a href="#" class="selected btn btn-primary">送出</a>
     </div>
 </div>
 
@@ -173,6 +174,19 @@
         });
         $('.close').click(function(){
             $('.gallery').hide();
+        })
+        $('.selected').click(function(){
+            $.ajax({
+                url:'create.php',
+                type:'get',
+                data:{
+                    cover:$('.cover:checked').val()
+                },
+                success:function(){
+                    location.href=this.url;
+                    $('.gallery').hide();
+                }
+            })
         })
     })
 </script>

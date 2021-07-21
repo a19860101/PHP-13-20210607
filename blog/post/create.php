@@ -16,7 +16,17 @@
         background-color: rgba(0,0,0,.8);
         top: 0;
         left: 0;
-        z-index: 9999;
+        z-index: 8888;
+    }
+    .gallery-container {
+        position: fixed;
+        width: 80%;
+        height: 80%;
+        background-color: #fff;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 8889;
     }
 </style>
 <div class="container">

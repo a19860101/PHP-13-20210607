@@ -70,8 +70,18 @@
                     <input type="file" name="cover" id="cover">
                 </div> -->
                 <div class="mb-3">
-                    <input type="hidden" name="cover" value="">
+                    <?php if(isset($_GET["cover"])){ ?>
+                        
+                    <input type="hidden" name="cover" value="<?php echo $_GET["cover"];?>">
+                    <img src="<?php echo $_GET["cover"];?>" width="150">
+                    <a href="#" class="selectCover">更換圖片</a>
+                    
+                    <?php }else{ ?>
+                    
+                        <input type="hidden" name="cover" value="">
                     <a href="#" class="selectCover">選擇圖片</a>
+                    
+                    <?php } ?>
                 </div>
                 <div class="mb-3">
                     <label for="category_id" class="form-label">分類</label>

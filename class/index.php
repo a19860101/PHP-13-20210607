@@ -9,11 +9,14 @@
         public $skin;
         public $level=0;
         public $race;
+        private $skills = 0;
+        protected $damage = 0;
 
+        // 權限 public private protected
 
         //方法
         public function walk(){
-
+            echo $this->skills;
         }
         public function run(){
 
@@ -21,22 +24,31 @@
         public function attack(){
             switch($this->race){
                 case "人類":
-                    echo "傷害 10";
+                    $this->damage = 10;
                     break;
                 case "獸":
-                    echo "傷害 30";
+                    $this->damage = 30;
                     break;
                 case "神族":
-                    echo "傷害 20";
+                    $this->damage = 20; 
                     break;
             }
+            echo "傷害:" .$this->damage;
         }
     }
     //非玩家腳色
     class NPC extends User{ 
         public $computer;
-
+        public function talk(){
+            echo $this->skills;
+        }
+        public function combo(){
+            $this->damage = 50;
+            echo "傷害:" .$this->damage;
+        }
     }
+    
+    
     //實體 物件實體 實例
 
     $jannifer = new User;
@@ -46,6 +58,9 @@
     $jannifer -> weight = '50kg';
     $jannifer -> skin = 'black';
     $jannifer -> race = "人類";
+
+    $jannifer->walk();
+
     $jannifer -> attack();
 
     echo "<hr>";
@@ -74,4 +89,9 @@
     // print_r($lopez);
 
     $mario = new NPC;
-    print_r($mario);
+    // print_r($mario);
+    // echo $mario->talk();
+
+    $mario ->combo();
+
+    $mario->damage;

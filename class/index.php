@@ -1,6 +1,13 @@
 <?php
     //宣告 User 類別
     class User {
+
+        //建構子
+        function __construct(){
+            echo "伺服器:水蛇許德拉";
+            echo "<br>";
+        }
+
         //屬性
         public $name;
         public $gender;
@@ -94,4 +101,4 @@
 
     $mario ->combo();
 
-    $mario->damage;
+    // $mario->damage;

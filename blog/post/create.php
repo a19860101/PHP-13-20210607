@@ -2,6 +2,9 @@
     include("../pdo.php");
     include("../category/function.php");
     $categories = categoryIndex();
+
+    // $str = "images/123.jpg";
+    // echo mb_substr($str,7);
 ?>
 <?php include("../template/header.php"); ?>
 <?php include("../template/nav.php"); ?>

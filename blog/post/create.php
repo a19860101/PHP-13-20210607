@@ -106,6 +106,10 @@
     <div class="gallery-container">
         <i class="fas fa-times fa-3x close"></i>
         <!-- <a href="#" class="close">close</a> -->
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="img">
+            <input type="submit">
+        </form>
         <div class="gallery-items">
             <?php 
                 $galleries = glob("images/*.{jpeg,jpg,png,gif,webp}",GLOB_BRACE);
@@ -198,6 +202,7 @@
                 }
             })
         })
+
     })
 </script>
 <?php include("../template/footer.php"); ?>

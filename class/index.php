@@ -21,6 +21,11 @@
 
         // 權限 public private protected
 
+        // 定義靜態方法
+        static function standUp($race){
+            echo $race."Stand Up!!!!";
+        }
+
         //方法
         public function walk(){
             echo $this->skills;
@@ -55,6 +60,9 @@
         }
     }
     
+    //呼叫靜態方法
+    $mary = User::standUp("人類");
+
     
     //實體 物件實體 實例
 

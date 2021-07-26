@@ -1,5 +1,5 @@
 <?php
-    //宣告 Human 類別
+    //宣告 User 類別
     class User {
         //屬性
         public $name;
@@ -32,7 +32,11 @@
             }
         }
     }
+    //非玩家腳色
+    class NPC extends User{ 
+        public $computer;
 
+    }
     //實體 物件實體 實例
 
     $jannifer = new User;
@@ -68,3 +72,6 @@
     $john -> attack();
     echo "<hr>";
     // print_r($lopez);
+
+    $mario = new NPC;
+    print_r($mario);
